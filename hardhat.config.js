@@ -1,6 +1,7 @@
 require("@nomicfoundation/hardhat-toolbox");
+require('dotenv').config()
 
-const ROPSTEN_PRIVATE_KEY = "12a998ef40a80c25a5c16b06c10e254ef4774848b37857ed26b2a9ccb47ee967";
+const ROPSTEN_PRIVATE_KEY = process.env.PRIVATE_KEY
 
 /** @type import('hardhat/config').HardhatUserConfig */
 module.exports = {
