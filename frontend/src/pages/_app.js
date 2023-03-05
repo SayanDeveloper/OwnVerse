@@ -5,15 +5,15 @@ import {
   RainbowKitProvider,
   darkTheme,
 } from "@rainbow-me/rainbowkit";
-import { configureChains, createClient, mainnet, WagmiConfig } from "wagmi";
-import { arbitrum, bscTestnet, optimism, polygon, polygonMumbai } from "wagmi/chains";
+import { configureChains, createClient, WagmiConfig } from "wagmi";
+import { arbitrum, bscTestnet, optimism, polygon, polygonMumbai, goerli } from "wagmi/chains";
 import { useState, useEffect } from "react";
 import Navbar from "@/components/Navbar";
 import { alchemyProvider } from 'wagmi/providers/alchemy';
 import { publicProvider } from 'wagmi/providers/public';
 
 const { chains, provider } = configureChains(
-  [mainnet, polygon, bscTestnet, polygonMumbai, optimism, arbitrum],
+  [goerli, polygon, bscTestnet, polygonMumbai, optimism, arbitrum],
   [
     alchemyProvider({ apiKey: "IFTdS-HwrT3eufcbPA5nvfm9iVfnMq7j" }),
     publicProvider()
