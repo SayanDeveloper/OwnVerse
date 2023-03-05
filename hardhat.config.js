@@ -8,7 +8,7 @@ module.exports = {
   solidity: "0.8.18",
   networks: {
     Goerli: {
-      url: "https://goerli.infura.io/v3/a95462654a494a618f973f6cf7ae1b75",
+      url: `https://goerli.infura.io/v3/${process.env.GOERLI_KEY}`,
       accounts: [`${ROPSTEN_PRIVATE_KEY}`],
     },
   },
