@@ -4,6 +4,8 @@ pragma solidity >=0.7.0 <0.9.0;
 
 contract SocialMedia {
 
+    event PostUploaded(bytes32 postId, bytes32 description, bytes32 imgUrl, bytes32 videoUrl);
+
     struct UserDetails {
         uint uId;
         bytes32 userName;
@@ -57,6 +59,7 @@ contract SocialMedia {
         );
         userPosts[msg.sender].push(newPost);
         postDetails[postId] = newPost;
+        emit PostUploaded(postId, description, typeOfMedia == 1 ? url : bytes32(""), typeOfMedia == 2 ? url : bytes32(""));
     }
 
 }
