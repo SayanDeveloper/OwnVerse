@@ -5,6 +5,7 @@ import {
   RainbowKitProvider,
   darkTheme,
 } from "@rainbow-me/rainbowkit";
+//import { RainbowKitSiweNextAuthProvider } from '@rainbow-me/rainbowkit-siwe-next-auth';
 import { configureChains, createClient, WagmiConfig } from "wagmi";
 import { arbitrum, bscTestnet, optimism, polygon, polygonMumbai, goerli } from "wagmi/chains";
 import { useState, useEffect } from "react";
@@ -40,10 +41,14 @@ export default function App({ Component, pageProps }) {
     <ChakraProvider>
       {ready ? (
         <WagmiConfig client={wagmiClient}>
-          <RainbowKitProvider coolMode chains={chains} theme={darkTheme()}>
-              <Navbar />
-              <Component {...pageProps} />
-          </RainbowKitProvider>
+          {/* <SessionProvider refetchInterval={0} session={pageProps.session}>
+            <RainbowKitSiweNextAuthProvider> */}
+              <RainbowKitProvider coolMode chains={chains} theme={darkTheme()}>
+                  <Navbar />
+                  <Component {...pageProps} />
+              </RainbowKitProvider>
+            {/* </RainbowKitSiweNextAuthProvider>
+          </SessionProvider> */}
         </WagmiConfig>
       ) : null}
     </ChakraProvider>

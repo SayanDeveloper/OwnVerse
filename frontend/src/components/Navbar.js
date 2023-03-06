@@ -3,6 +3,7 @@ import { Box, Flex, Text, Button, useDisclosure } from "@chakra-ui/react";
 import { HamburgerIcon, CloseIcon } from "@chakra-ui/icons";
 import { motion } from "framer-motion";
 import { ConnectButton } from '@rainbow-me/rainbowkit';
+import { useSignMessage } from "wagmi";
 
 const variants = {
   open: { opacity: 1, height: "auto" },
@@ -11,6 +12,10 @@ const variants = {
 
 const Navbar = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
+
+  // const { data, isError, isLoading, isSuccess, signMessage } = useSignMessage({
+  //   message: 'gm wagmi frens',
+  // })
 
   return (
     <Box bg="#131415" py={3} px={{ base: 4, md: 20 }}>
