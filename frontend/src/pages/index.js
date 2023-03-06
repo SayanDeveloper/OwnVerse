@@ -6,8 +6,6 @@ export default function Home() {
 
   const socialMediaContract = useSocialMediaContract();
 
-  console.log(socialMediaContract);
-
   const uploadPost = async (e) => {
     const description = ethers.utils.formatBytes32String("this is desc");
     const url = ethers.utils.formatBytes32String("this is url");
